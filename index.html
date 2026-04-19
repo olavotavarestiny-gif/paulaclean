@@ -433,9 +433,9 @@
     .video-container {
       width: 100%;
       max-width: 340px;
-      aspect-ratio: 9 / 16;
       border-radius: 20px;
       overflow: hidden;
+      background: #000;
       box-shadow:
         0 28px 64px rgba(0,0,0,0.4),
         0 0 0 1px rgba(255,255,255,0.08);
@@ -445,8 +445,8 @@
 
     .video-container video {
       width: 100%;
-      height: 100%;
-      object-fit: cover;
+      height: auto;
+      object-fit: contain;
       display: block;
       pointer-events: none;
     }
@@ -564,6 +564,92 @@
       font-weight: 600;
       padding: 0.42rem 1rem;
       border-radius: 100px;
+    }
+
+    /* =========================================
+       EVENTOS & PRESENÇAS
+    ========================================= */
+    .eventos-section {
+      background: var(--bg);
+      padding: 5rem 1.25rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .eventos-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: center;
+      width: 100%;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .evento-card {
+      background: var(--white);
+      border: 2px solid #D0E8FF;
+      border-radius: 24px;
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.25rem;
+      box-shadow: 0 8px 32px rgba(10,94,202,0.08);
+      flex: 1 1 280px;
+      max-width: 340px;
+    }
+
+    .evento-video-box {
+      width: 100%;
+      max-width: 220px;
+      border-radius: 14px;
+      overflow: hidden;
+      background: #000;
+      position: relative;
+      cursor: pointer;
+      box-shadow: 0 16px 40px rgba(0,0,0,0.28);
+    }
+
+    .evento-video-box video {
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+      display: block;
+      pointer-events: none;
+    }
+
+    .evento-person { text-align: center; }
+
+    .evento-person-name {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text-dark);
+      margin-bottom: 0.35rem;
+    }
+
+    .evento-person-title {
+      font-size: 0.78rem;
+      color: #4b5a72;
+      line-height: 1.45;
+    }
+
+    .evento-person-org {
+      display: inline-block;
+      margin-top: 0.5rem;
+      background: var(--bg);
+      border: 1.5px solid #D0E8FF;
+      color: var(--blue-deep);
+      font-size: 0.72rem;
+      font-weight: 600;
+      padding: 0.3rem 0.8rem;
+      border-radius: 100px;
+      letter-spacing: 0.04em;
+    }
+
+    @media (max-width: 640px) {
+      .evento-card { max-width: 100%; }
+      .evento-video-box { max-width: 180px; }
     }
 
     /* =========================================
@@ -817,6 +903,77 @@
       .hero { padding: 7rem 4rem 6rem; }
       .produto { padding: 8rem 4rem; }
     }
+    /* =========================================
+       BENEFÍCIOS
+    ========================================= */
+    .beneficios-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.85rem 2rem;
+    }
+
+    .beneficio-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.65rem;
+      font-size: 0.93rem;
+      color: var(--text-dark);
+      font-weight: 600;
+      line-height: 1.45;
+    }
+
+    .beneficio-icon {
+      width: 30px; height: 30px;
+      background: linear-gradient(135deg, #EBF4FF, #D4EAFF);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    /* =========================================
+       PREÇO E LOCALIZAÇÕES MÚLTIPLAS
+    ========================================= */
+    .preco-grid {
+      display: flex;
+      gap: 0.75rem;
+      justify-content: center;
+    }
+
+    .preco-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.25rem;
+      background: var(--bg);
+      border: 2px solid #D0E8FF;
+      border-radius: 14px;
+      padding: 0.75rem 1.4rem;
+    }
+
+    .preco-size {
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: #4b5a72;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .preco-valor {
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: var(--blue-deep);
+      letter-spacing: 0.02em;
+    }
+
+    .location-pills-wrap {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      justify-content: center;
+    }
+
   </style>
 </head>
 <body>
@@ -866,10 +1023,10 @@
       <div class="hero-text fade-in">
         <div class="badge">
           <svg width="8" height="8" viewBox="0 0 8 8"><circle cx="4" cy="4" r="4" fill="#0A5ECA"/></svg>
-          Feito em Angola · Para o Mundo
+          100% Nacional · Feito em Angola
         </div>
         <h1 class="hero-h1">Brilho em <span class="accent">tudo</span> o que tocas.</h1>
-        <p class="hero-sub">A Paula Clean Pasta de Brilho limpa panelas, ténis, superfícies e muito mais. Feito em Angola, para o mundo.</p>
+        <p class="hero-sub">Paula Clean é um detergente angolano 100% nacional, em forma de pasta, com marca registada — desenvolvido para devolver o brilho natural dos teus objectos. Panelas, tênis, superfícies e muito mais. Resultado imediato.</p>
         <div class="hero-ctas">
           <button class="btn-primary" onclick="openModal()" aria-haspopup="dialog">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
@@ -890,7 +1047,7 @@
       <!-- Foto do produto -->
       <div class="hero-photo-wrap fade-in delay-2">
         <div class="hero-photo">
-          <img src="./IMG_0547.jpg" alt="Paula com os produtos Paula Clean Pasta de Brilho no Kilamba, Luanda">
+          <img src="./panelasantesedepois.jpg" alt="Panelas antes e depois do Paula Clean — resultado visível de limpeza e brilho">
         </div>
       </div>
     </div>
@@ -919,8 +1076,44 @@
     <div class="section-inner" style="position:relative;z-index:1;">
       <div class="fade-in">
         <p class="section-label">O Produto</p>
-        <h2 class="section-h2">O que é a Pasta de Brilho?</h2>
-        <p class="section-p">Uma pasta multiusos que devolve o brilho a panelas, ténis, bijuteria, superfícies de inox e muito mais. Fórmula potente, resultado imediato.</p>
+        <h2 class="section-h2">O que é o Paula Clean?</h2>
+        <p class="section-p">É um detergente angolano com marca registada, em forma de pasta, desenvolvido para proporcionar soluções de limpeza eficiente a fim de devolver o brilho natural dos objectos.</p>
+      </div>
+
+      <!-- Benefícios -->
+      <div class="fade-in delay-1" style="margin-bottom:2.5rem;">
+        <p class="section-label" style="margin-bottom:1.25rem;">Benefícios</p>
+        <div class="beneficios-grid">
+          <div class="beneficio-item">
+            <div class="beneficio-icon" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M3 9l4 4 8-8" stroke="#0A5ECA" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <p>Remove sujidade e manchas difíceis com facilidade</p>
+          </div>
+          <div class="beneficio-item">
+            <div class="beneficio-icon" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M3 9l4 4 8-8" stroke="#0A5ECA" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <p>Limpa e devolve o brilho natural</p>
+          </div>
+          <div class="beneficio-item">
+            <div class="beneficio-icon" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M3 9l4 4 8-8" stroke="#0A5ECA" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <p>Económico e com alto rendimento</p>
+          </div>
+          <div class="beneficio-item">
+            <div class="beneficio-icon" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M3 9l4 4 8-8" stroke="#0A5ECA" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <p>Seguro e prático de usar</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- O que limpa -->
+      <div class="fade-in delay-2" style="margin-bottom:1.5rem;">
+        <p class="section-label">O Que Limpa?</p>
       </div>
 
       <div class="produto-grid" role="list">
@@ -934,7 +1127,7 @@
               <circle cx="12.5" cy="15" r="2.5" fill="#57C5E5" opacity="0.45"/>
             </svg>
           </div>
-          <p class="produto-card-label">Panelas e<br>Frigideiras</p>
+          <p class="produto-card-label">Utensílios de<br>Cozinha e W.C.</p>
         </div>
 
         <!-- Ténis -->
@@ -945,7 +1138,7 @@
               <path d="M10 9.5l1.5 6M14 10.5l1.5 5" stroke="#0A5ECA" stroke-width="1.4" stroke-linecap="round" opacity="0.5"/>
             </svg>
           </div>
-          <p class="produto-card-label">Ténis e<br>Calçado</p>
+          <p class="produto-card-label">Tênis e Calçados<br>em Mat. Laváveis</p>
         </div>
 
         <!-- Inox -->
@@ -960,7 +1153,7 @@
                 fill="#0A5ECA" opacity="0.3" stroke="#0A5ECA" stroke-width="1" stroke-linejoin="round"/>
             </svg>
           </div>
-          <p class="produto-card-label">Superfícies<br>de Inox</p>
+          <p class="produto-card-label">Alumínio, Inox,<br>Prata, Ouro e Metais</p>
         </div>
 
         <!-- Bijuteria -->
@@ -972,7 +1165,7 @@
               <path d="M7.5 7.5l2 2M16.5 7.5l-2 2M7.5 18.5l2-2M16.5 18.5l-2-2" stroke="#0A5ECA" stroke-width="1.5" stroke-linecap="round" opacity="0.55"/>
             </svg>
           </div>
-          <p class="produto-card-label">Bijuteria<br>e Metais</p>
+          <p class="produto-card-label">Plástico, Resina,<br>Vidro e Paredes</p>
         </div>
       </div>
     </div>
@@ -1054,7 +1247,7 @@
       <div class="fade-in">
         <p class="section-label" style="justify-content:center;">Disponível Agora</p>
         <h2 class="section-h2" style="text-align:center;">Onde Comprar</h2>
-        <p class="section-p" style="text-align:center;">Entrega disponível no Kilamba, Luanda. Faz a tua encomenda agora mesmo.</p>
+        <p class="section-p" style="text-align:center;">Disponível em vários bairros de Luanda. Faz a tua encomenda agora mesmo pelo WhatsApp.</p>
       </div>
 
       <div class="fade-in delay-1" style="display:flex;justify-content:center;width:100%;">
@@ -1081,16 +1274,133 @@
             </svg>
             Encomendar pelo WhatsApp
           </a>
-          <div class="location-pill">
-            <svg width="11" height="13" viewBox="0 0 11 13" fill="none" aria-hidden="true">
-              <path d="M5.5 0C3.02 0 1 2.02 1 4.5c0 3.37 4.5 8.5 4.5 8.5S10 7.87 10 4.5C10 2.02 7.98 0 5.5 0zm0 6a1.5 1.5 0 110-3 1.5 1.5 0 010 3z" fill="#0A5ECA"/>
-            </svg>
-            Entrega no Kilamba · Luanda, Angola
+          <div class="preco-grid">
+            <div class="preco-item">
+              <span class="preco-size">250 g</span>
+              <span class="preco-valor">1.500 Kz</span>
+            </div>
+            <div class="preco-item">
+              <span class="preco-size">500 g</span>
+              <span class="preco-valor">2.500 Kz</span>
+            </div>
+          </div>
+          <div class="location-pills-wrap">
+            <div class="location-pill">
+              <svg width="11" height="13" viewBox="0 0 11 13" fill="none" aria-hidden="true">
+                <path d="M5.5 0C3.02 0 1 2.02 1 4.5c0 3.37 4.5 8.5 4.5 8.5S10 7.87 10 4.5C10 2.02 7.98 0 5.5 0zm0 6a1.5 1.5 0 110-3 1.5 1.5 0 010 3z" fill="#0A5ECA"/>
+              </svg>
+              Kilamba
+            </div>
+            <div class="location-pill">
+              <svg width="11" height="13" viewBox="0 0 11 13" fill="none" aria-hidden="true">
+                <path d="M5.5 0C3.02 0 1 2.02 1 4.5c0 3.37 4.5 8.5 4.5 8.5S10 7.87 10 4.5C10 2.02 7.98 0 5.5 0zm0 6a1.5 1.5 0 110-3 1.5 1.5 0 010 3z" fill="#0A5ECA"/>
+              </svg>
+              B.O
+            </div>
+            <div class="location-pill">
+              <svg width="11" height="13" viewBox="0 0 11 13" fill="none" aria-hidden="true">
+                <path d="M5.5 0C3.02 0 1 2.02 1 4.5c0 3.37 4.5 8.5 4.5 8.5S10 7.87 10 4.5C10 2.02 7.98 0 5.5 0zm0 6a1.5 1.5 0 110-3 1.5 1.5 0 010 3z" fill="#0A5ECA"/>
+              </svg>
+              Maianga
+            </div>
+            <div class="location-pill">
+              <svg width="11" height="13" viewBox="0 0 11 13" fill="none" aria-hidden="true">
+                <path d="M5.5 0C3.02 0 1 2.02 1 4.5c0 3.37 4.5 8.5 4.5 8.5S10 7.87 10 4.5C10 2.02 7.98 0 5.5 0zm0 6a1.5 1.5 0 110-3 1.5 1.5 0 010 3z" fill="#0A5ECA"/>
+              </svg>
+              Sequele
+            </div>
+            <div class="location-pill">
+              <svg width="11" height="13" viewBox="0 0 11 13" fill="none" aria-hidden="true">
+                <path d="M5.5 0C3.02 0 1 2.02 1 4.5c0 3.37 4.5 8.5 4.5 8.5S10 7.87 10 4.5C10 2.02 7.98 0 5.5 0zm0 6a1.5 1.5 0 110-3 1.5 1.5 0 010 3z" fill="#0A5ECA"/>
+              </svg>
+              Zango
+            </div>
           </div>
         </div>
       </div>
     </div>
   </section>
+
+  <!-- Onda: Onde Comprar (branco) → Eventos (#F4F9FF) -->
+  <div class="wave-divider" style="background:#ffffff;" aria-hidden="true">
+    <div class="wave-layer wave-layer-1">
+      <svg viewBox="0 0 2880 72" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0,28 C300,72 600,5 900,42 C1100,68 1340,12 1440,36 C1740,72 2040,5 2340,42 C2540,68 2780,12 2880,36 L2880,72 L0,72 Z" fill="#F4F9FF"/>
+      </svg>
+    </div>
+    <div class="wave-layer wave-layer-2">
+      <svg viewBox="0 0 2880 72" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0,42 C240,8 540,68 820,32 C1020,8 1260,60 1440,48 C1680,8 1980,68 2260,32 C2460,8 2700,60 2880,48 L2880,72 L0,72 Z" fill="#F4F9FF"/>
+      </svg>
+    </div>
+  </div>
+
+  <!-- =============================================
+       EVENTOS & PRESENÇAS
+  ============================================== -->
+  <section class="eventos-section" id="eventos" aria-label="Presença em Eventos">
+    <div style="max-width:800px;margin:0 auto;text-align:center;margin-bottom:2.75rem;" class="fade-in">
+      <p class="section-label" style="justify-content:center;">Presença em Eventos</p>
+      <h2 class="section-h2">A Paula Clean nas Mãos<br>dos Líderes</h2>
+      <p class="section-p" style="max-width:520px;margin:0 auto;">
+        Apresentada em festas e eventos de destaque a figuras influentes da economia angolana.
+      </p>
+    </div>
+
+    <div class="eventos-grid">
+      <!-- Vídeo 1: Arlindo Das Chagas Rangel -->
+      <div class="evento-card fade-in delay-1">
+        <div class="evento-video-box" id="eventoBox1" onclick="toggleEventVideo('eventoVid1','eventoIcon1')">
+          <video id="eventoVid1" src="./Videos%20Portfolio/Paulacleanport2.mp4" loop playsinline preload="metadata"
+            aria-label="Paula Clean apresentada a Arlindo Das Chagas Rangel"></video>
+          <div class="video-tap-icon show" id="eventoIcon1" aria-hidden="true">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="32" cy="32" r="32" fill="rgba(0,0,0,0.45)"/>
+              <polygon points="26,20 26,44 46,32" fill="white"/>
+            </svg>
+          </div>
+        </div>
+        <div class="evento-person">
+          <p class="evento-person-name">Arlindo Das Chagas Rangel</p>
+          <p class="evento-person-title">Presidente do Conselho de<br>Administração (PCA) da AIPEX</p>
+          <span class="evento-person-org">AIPEX — Agência de Investimento Privado<br>e Promoção das Exportações</span>
+        </div>
+      </div>
+
+      <!-- Vídeo 2: Luís Cupenala -->
+      <div class="evento-card fade-in delay-2">
+        <div class="evento-video-box" id="eventoBox2" onclick="toggleEventVideo('eventoVid2','eventoIcon2')">
+          <video id="eventoVid2" src="./Videos%20Portfolio/paulaclean%20port1.mp4" loop playsinline preload="metadata"
+            aria-label="Paula Clean apresentada a Luís Cupenala"></video>
+          <div class="video-tap-icon show" id="eventoIcon2" aria-hidden="true">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="32" cy="32" r="32" fill="rgba(0,0,0,0.45)"/>
+              <polygon points="26,20 26,44 46,32" fill="white"/>
+            </svg>
+          </div>
+        </div>
+        <div class="evento-person">
+          <p class="evento-person-name">Luís Cupenala</p>
+          <p class="evento-person-title">Presidente da Câmara de<br>Comércio Angola e China</p>
+          <span class="evento-person-org">Câmara de Comércio Angola–China</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Onda: Eventos (#F4F9FF) → Footer (#0D1B3E) -->
+  <div class="wave-divider" style="background:#F4F9FF;" aria-hidden="true">
+    <div class="wave-layer wave-layer-1">
+      <svg viewBox="0 0 2880 72" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0,28 C300,72 600,5 900,42 C1100,68 1340,12 1440,36 C1740,72 2040,5 2340,42 C2540,68 2780,12 2880,36 L2880,72 L0,72 Z" fill="#0D1B3E"/>
+      </svg>
+    </div>
+    <div class="wave-layer wave-layer-2">
+      <svg viewBox="0 0 2880 72" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0,42 C240,8 540,68 820,32 C1020,8 1260,60 1440,48 C1680,8 1980,68 2260,32 C2460,8 2700,60 2880,48 L2880,72 L0,72 Z" fill="#0D1B3E"/>
+      </svg>
+    </div>
+  </div>
 
   <!-- =============================================
        FOOTER
@@ -1298,6 +1608,29 @@
           <polygon points="26,20 26,44 46,32" fill="white"/>`;
         icon.classList.add('show');
         clearTimeout(videoFeedbackTimer); // não esconder quando parado
+      }
+    }
+
+    function toggleEventVideo(videoId, iconId) {
+      const vid  = document.getElementById(videoId);
+      const icon = document.getElementById(iconId);
+      if (!vid) return;
+      if (vid.paused) {
+        vid.play();
+        icon.innerHTML = `<svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="32" cy="32" r="32" fill="rgba(0,0,0,0.45)"/>
+          <rect x="22" y="20" width="7" height="24" rx="3" fill="white"/>
+          <rect x="35" y="20" width="7" height="24" rx="3" fill="white"/></svg>`;
+        icon.classList.add('show');
+        const t = setTimeout(() => icon.classList.remove('show'), 700);
+        icon._timer = t;
+      } else {
+        vid.pause();
+        clearTimeout(icon._timer);
+        icon.innerHTML = `<svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="32" cy="32" r="32" fill="rgba(0,0,0,0.45)"/>
+          <polygon points="26,20 26,44 46,32" fill="white"/></svg>`;
+        icon.classList.add('show');
       }
     }
 
