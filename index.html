@@ -17,8 +17,43 @@
     ========================================= */
     @font-face {
       font-family: 'Biennale';
+      src: url('./Fontes/Demo_Fonts/Fontspring-DEMO-biennale-light.otf') format('opentype');
+      font-weight: 300;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: 'Biennale';
+      src: url('./Fontes/Demo_Fonts/Fontspring-DEMO-biennale-regular.otf') format('opentype');
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: 'Biennale';
+      src: url('./Fontes/Demo_Fonts/Fontspring-DEMO-biennale-medium.otf') format('opentype');
+      font-weight: 500;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: 'Biennale';
       src: url('./Fontes/Demo_Fonts/Fontspring-DEMO-biennale-semibold.otf') format('opentype');
       font-weight: 600;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: 'Biennale';
+      src: url('./Fontes/Demo_Fonts/Fontspring-DEMO-biennale-bold.otf') format('opentype');
+      font-weight: 700;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: 'Biennale';
+      src: url('./Fontes/Demo_Fonts/Fontspring-DEMO-biennale-black.otf') format('opentype');
+      font-weight: 900;
       font-style: normal;
       font-display: swap;
     }
@@ -432,10 +467,11 @@
 
     .video-container {
       width: 100%;
-      max-width: 340px;
+      max-width: 420px;
       border-radius: 20px;
       overflow: hidden;
       background: #000;
+      aspect-ratio: 9 / 16;
       box-shadow:
         0 28px 64px rgba(0,0,0,0.4),
         0 0 0 1px rgba(255,255,255,0.08);
@@ -445,8 +481,8 @@
 
     .video-container video {
       width: 100%;
-      height: auto;
-      object-fit: contain;
+      height: 100%;
+      object-fit: cover;
       display: block;
       pointer-events: none;
     }
@@ -464,8 +500,8 @@
     }
     .video-tap-icon.show { opacity: 1; }
     .video-tap-icon svg {
-      width: 64px;
-      height: 64px;
+      width: 80px;
+      height: 80px;
       filter: drop-shadow(0 2px 12px rgba(0,0,0,0.4));
     }
 
@@ -602,10 +638,11 @@
 
     .evento-video-box {
       width: 100%;
-      max-width: 220px;
+      max-width: 260px;
       border-radius: 14px;
       overflow: hidden;
       background: #000;
+      aspect-ratio: 9 / 16;
       position: relative;
       cursor: pointer;
       box-shadow: 0 16px 40px rgba(0,0,0,0.28);
@@ -613,8 +650,8 @@
 
     .evento-video-box video {
       width: 100%;
-      height: auto;
-      object-fit: contain;
+      height: 100%;
+      object-fit: cover;
       display: block;
       pointer-events: none;
     }
@@ -1086,25 +1123,25 @@
         <div class="beneficios-grid">
           <div class="beneficio-item">
             <div class="beneficio-icon" aria-hidden="true">
-              <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M3 9l4 4 8-8" stroke="#0A5ECA" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <svg width="22" height="22" viewBox="0 0 18 18" fill="none"><path d="M3 9l4 4 8-8" stroke="#0A5ECA" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </div>
             <p>Remove sujidade e manchas difíceis com facilidade</p>
           </div>
           <div class="beneficio-item">
             <div class="beneficio-icon" aria-hidden="true">
-              <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M3 9l4 4 8-8" stroke="#0A5ECA" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <svg width="22" height="22" viewBox="0 0 18 18" fill="none"><path d="M3 9l4 4 8-8" stroke="#0A5ECA" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </div>
             <p>Limpa e devolve o brilho natural</p>
           </div>
           <div class="beneficio-item">
             <div class="beneficio-icon" aria-hidden="true">
-              <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M3 9l4 4 8-8" stroke="#0A5ECA" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <svg width="22" height="22" viewBox="0 0 18 18" fill="none"><path d="M3 9l4 4 8-8" stroke="#0A5ECA" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </div>
             <p>Económico e com alto rendimento</p>
           </div>
           <div class="beneficio-item">
             <div class="beneficio-icon" aria-hidden="true">
-              <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M3 9l4 4 8-8" stroke="#0A5ECA" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <svg width="22" height="22" viewBox="0 0 18 18" fill="none"><path d="M3 9l4 4 8-8" stroke="#0A5ECA" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </div>
             <p>Seguro e prático de usar</p>
           </div>
@@ -1581,6 +1618,13 @@
       }
       requestAnimationFrame(tick);
     })();
+
+    // ── Pré-visualização: mostra primeiro frame em todos os vídeos ──
+    document.querySelectorAll('video').forEach(function(v) {
+      v.addEventListener('loadedmetadata', function() {
+        this.currentTime = 0.001;
+      });
+    });
 
     // ── Vídeo: toque para pausar/retomar ──
     let videoFeedbackTimer = null;
